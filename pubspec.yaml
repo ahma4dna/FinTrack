@@ -48,6 +48,7 @@ dependencies:
   uuid: ^4.6.0
   injectable_generator: ^3.1.3
   lottie: ^3.5.1
+  
  
   
 
@@ -63,7 +64,16 @@ flutter_native_splash:
   android_12:
     image: assets/images/android12_splash_icon.png
     color: "#F4F5F6"
-    color_dark: "#F4F5F6"  
+    color_dark: "#F4F5F6"
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  adaptive_icon_background: "#0B4F4A"
+  adaptive_icon_foreground: "assets/images/icon_foreground.png"
+  adaptive_icon_monochrome: "assets/images/icon_monochrome.png"  
 
 dev_dependencies:
   flutter_test:
@@ -82,6 +92,7 @@ dev_dependencies:
   flutter_native_splash: ^2.4.8
   mockito: ^5.8.1
   rename: ^3.1.0
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

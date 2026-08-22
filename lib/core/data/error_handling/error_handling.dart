@@ -1,0 +1,5 @@
+
+
+class ErrorHandling implements Exception {
+
+}

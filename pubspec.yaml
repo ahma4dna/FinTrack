@@ -48,6 +48,9 @@ dependencies:
   uuid: ^4.6.0
   injectable_generator: ^3.1.3
   lottie: ^3.5.1
+  flutter_spinkit: ^5.2.2
+  gap: ^3.0.1
+  flutter_svg: ^2.3.0
   
  
   
@@ -59,21 +62,21 @@ flutter_native_splash:
   fullscreen: false
   color: "#F4F5F6"
   color_dark: "#F4F5F6"
-  image: assets/images/native_splash.png
-  image_dark: assets/images/native_splash.png
+  image: assets/images/native_app/native_splash.png
+  image_dark: assets/image/native_app/native_splash.png
   android_12:
-    image: assets/images/android12_splash_icon.png
+    image: assets/images/native_app/android12_splash_icon.png
     color: "#F4F5F6"
     color_dark: "#F4F5F6"
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/icon.png"
+  image_path: "assets/images/native_app/icon.png"
   min_sdk_android: 21
   remove_alpha_ios: true
   adaptive_icon_background: "#0B4F4A"
-  adaptive_icon_foreground: "assets/images/icon_foreground.png"
-  adaptive_icon_monochrome: "assets/images/icon_monochrome.png"  
+  adaptive_icon_foreground: "assets/images/native_app/icon_foreground.png"
+  adaptive_icon_monochrome: "assets/image/native_app/icon_monochrome.png"  
 
 dev_dependencies:
   flutter_test:
@@ -108,8 +111,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/app/icon_splash_screen.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -129,6 +132,7 @@ flutter:
         - asset: assets/fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Medium.ttf
         - asset: assets/fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Regular.ttf
         - asset: assets/fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Bold.ttf
     - family: IBM Plex Mono
       fonts:
         - asset: assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf

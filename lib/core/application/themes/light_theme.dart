@@ -42,7 +42,7 @@ abstract class LightTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           overlayColor: AppColors.primary,
-          textStyle: AppStyles.getRegularStyle(context: context, color: AppColors.primary, fontSize: AppSize.s20),
+          textStyle: AppStyles.getRegularSens10(context: context, color: AppColors.primary, fontSize: AppSize.s20),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -68,9 +68,9 @@ abstract class LightTheme {
         ),
         filled: true,
         fillColor: AppColors.lightInputBackground,
-        labelStyle: AppStyles.getLightStyle(fontSize: AppSize.s20, context: context, color: AppColors.black),
-        hintStyle: AppStyles.getLightStyle(fontSize: AppSize.s20, context: context, color: AppColors.black),
-        errorStyle: AppStyles.getRegularStyle(
+        labelStyle: AppStyles.getRegularSens10(fontSize: AppSize.s20, context: context, color: AppColors.black),
+        hintStyle: AppStyles.getRegularSens10(fontSize: AppSize.s20, context: context, color: AppColors.black),
+        errorStyle: AppStyles.getRegularSens10(
           fontSize: AppSize.s22,
           color: AppColors.lightError,
           context: context,

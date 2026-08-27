@@ -14,4 +14,5 @@ abstract class AppColors {
   static const Color amber = Color(0xFFC98A2C);
   static const Color moss = Color(0xFF4C9A6A);
   static const Color tealark = Color(0xFF0A423E);
+  static const Color textrimryColor = Color(0xFF64707A);
 }

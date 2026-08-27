@@ -96,6 +96,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'test '**
   String get test;
+
+  /// No description provided for @fin_track.
+  ///
+  /// In ar, this message translates to:
+  /// **'FinTrack '**
+  String get fin_track;
+
+  /// No description provided for @org_mony_smart.
+  ///
+  /// In ar, this message translates to:
+  /// **'نظم أموالك بذكاء '**
+  String get org_mony_smart;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

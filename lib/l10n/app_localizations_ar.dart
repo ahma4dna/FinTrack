@@ -11,4 +11,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get test => 'test ';
+
+  @override
+  String get fin_track => 'FinTrack ';
+
+  @override
+  String get org_mony_smart => 'نظم أموالك بذكاء ';
 }

@@ -1,67 +1,137 @@
+import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
 import 'app_size.dart';
 
 abstract class AppStyles {
-  static TextStyle getBoldStyle({
+  static TextStyle getSemiBoldMono36({
     required BuildContext context,
-    double fontSize = AppSize.s45,
-    // Color color = AppColors.primary,
+    double? fontSize,
     Color? color,
   }) => TextStyle(
-    color: colorApp(context, color),
-    fontSize: getResponsiveSize(context: context, fontSize: fontSize),
-    fontFamily: 'Tajawal',
-    fontWeight: FontWeight.w700,
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? AppSize.s36,
+    fontFamily: 'IBM Plex Mono',
+    fontWeight: FontWeight.w600,
   );
 
-  static TextStyle getSemiBoldStyle({
+  static TextStyle getSemiBoldSens20({
     required BuildContext context,
-    double fontSize = AppSize.s45,
-    // Color color = AppColors.primary,
+    double? fontSize,
     Color? color,
   }) => TextStyle(
-    color: colorApp(context, color),
-    fontSize: getResponsiveSize(context: context, fontSize: fontSize),
-    fontFamily: 'Tajawal',
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 20,
+    fontFamily: 'IBM Plex Sans Arabic',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle getSemiBoldSens18({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 18,
+    fontFamily: 'IBM Plex Sans Arabic',
+    fontWeight: FontWeight.w600,
+  );
+static TextStyle getBoldSens36({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? AppColors.white,
+    fontSize: fontSize ?? 36,
+    fontFamily: 'IBM Plex Sans Arabic',
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle getSemiBoldSens16({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 16,
+    fontFamily: 'IBM Plex Sans Arabic',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle getMeduimSens14({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color:  color ??Colors.white.withValues(alpha: 0.80),
+    fontSize: fontSize ?? 14,
+    fontFamily: 'IBM Plex Sans Arabic',
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle getRegularStyle({
+  static TextStyle getRegularSens14({
     required BuildContext context,
-    double fontSize = AppSize.s25,
-    // Color color = Colors.white,
+    double? fontSize,
     Color? color,
   }) => TextStyle(
-    color: colorApp(context, color),
-    fontSize: getResponsiveSize(context: context, fontSize: fontSize),
-    fontFamily: 'Tajawal',
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 14,
+    fontFamily: 'IBM Plex Sans Arabic',
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle getMediumStyle({
+  static TextStyle getMeduimSens12({
     required BuildContext context,
-    double fontSize = AppSize.s25,
-    // Color color = Colors.white,
+    double? fontSize,
     Color? color,
   }) => TextStyle(
-    color: colorApp(context, color),
-    fontSize: getResponsiveSize(context: context, fontSize: fontSize),
-    fontFamily: 'Tajawal',
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 12,
+    fontFamily: 'IBM Plex Sans Arabic',
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle getLightStyle({
+  static TextStyle getRegularSens10({
     required BuildContext context,
-    double fontSize = AppSize.s20,
-    // Color color = Colors.white,
+    double? fontSize,
     Color? color,
   }) => TextStyle(
-    color: colorApp(context, color),
-    fontSize: getResponsiveSize(context: context, fontSize: fontSize),
-    fontFamily: 'Tajawal',
-    fontWeight: FontWeight.w300,
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 10,
+    fontFamily: 'IBM Plex Sans Arabic',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle getSemiBoldMono30({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 30,
+    fontFamily: 'IBM Plex Mono',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle getSemiBoldMono14({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 14,
+    fontFamily: 'IBM Plex Mono',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle getRegularMono12({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF121820),
+    fontSize: fontSize ?? 14,
+    fontFamily: 'IBM Plex Mono',
+    fontWeight: FontWeight.w400,
   );
 }
 
@@ -72,7 +142,7 @@ double getResponsiveSize({
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = scaleFactor * fontSize;
   double lowerLimit = fontSize * AppSize.s0_8;
-  double upperLimit = fontSize * AppSize.s1;
+  double upperLimit = fontSize * AppSize.s1_5;
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 
@@ -85,13 +155,6 @@ double getScaleFactor(BuildContext context) {
   } else {
     return width / AppSize.s1920;
   }
-}
-
-Color? colorApp(BuildContext context, Color? color) {
-  final isDark = Theme.of(context).brightness == Brightness.dark
-      ? AppColors.white
-      : AppColors.black;
-  return color ?? isDark;
 }
 
 class AppSizeConfig {

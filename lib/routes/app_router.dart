@@ -1,3 +1,4 @@
+import 'package:fintrack/features/main/routes/main_route.dart';
 import 'package:fintrack/features/splash/routes/splash_route.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -7,5 +8,6 @@ final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
   routes: [
     splasRoute,
+    mainRoute,
   ],
 );

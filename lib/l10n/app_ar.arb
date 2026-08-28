@@ -1,6 +1,10 @@
 {
   "test": "test " ,
   "fin_track": "FinTrack " ,
-  "org_mony_smart": "نظم أموالك بذكاء "  
+  "org_mony_smart": "نظم أموالك بذكاء "  ,
+  "home": "الرئيسية"  ,
+  "account": "الحسابات"  ,
+  "budget": "الميزانيات"  ,
+  "report": "التقارير"   
   
   }

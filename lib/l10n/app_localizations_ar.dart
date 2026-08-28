@@ -17,4 +17,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get org_mony_smart => 'نظم أموالك بذكاء ';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get account => 'الحسابات';
+
+  @override
+  String get budget => 'الميزانيات';
+
+  @override
+  String get report => 'التقارير';
 }

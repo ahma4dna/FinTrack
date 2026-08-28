@@ -1,0 +1,1 @@
+const String reportsPath = "/reports";

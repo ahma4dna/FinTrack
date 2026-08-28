@@ -108,6 +108,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'نظم أموالك بذكاء '**
   String get org_mony_smart;
+
+  /// No description provided for @home.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرئيسية'**
+  String get home;
+
+  /// No description provided for @account.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحسابات'**
+  String get account;
+
+  /// No description provided for @budget.
+  ///
+  /// In ar, this message translates to:
+  /// **'الميزانيات'**
+  String get budget;
+
+  /// No description provided for @report.
+  ///
+  /// In ar, this message translates to:
+  /// **'التقارير'**
+  String get report;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

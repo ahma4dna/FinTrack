@@ -1,0 +1,12 @@
+import 'package:fintrack/features/accounts/domain/models/wallet_model.dart';
+import 'package:fintrack/features/accounts/domain/repository/wellets_repository.dart';
+
+class InsertWalletUseCase {
+  final WelletsRepository welletsRepository;
+
+  InsertWalletUseCase({required this.welletsRepository});
+
+  Future<int> insertWallet(WalletModel wallet) async {
+    return welletsRepository.insertWallet(wallet);
+  }
+}

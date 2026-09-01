@@ -11,4 +11,8 @@ class WalletDao extends DatabaseAccessor<AppDatabase> with _$WalletDaoMixin {
   Future<int> insertWallet(WalletsTableCompanion wallet) {
     return into(walletsTable).insert(wallet);
   }
+
+  Stream<List<WalletsTableData>> watchWallet() {
+    return select(walletsTable).watch();
+  }
 }

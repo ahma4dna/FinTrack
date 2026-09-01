@@ -21,7 +21,7 @@ void main() {
       walletDao: walletDao,
     );
   });
-
+  //1
   test(
     'should convert WalletModel to WalletsTableCompanion',
     () async {
@@ -68,6 +68,38 @@ void main() {
       expect(companion.isArchived.value, wallet.isArchived);
       expect(companion.createdAt.value, wallet.createdAt);
       expect(companion.updatedAt.value, wallet.updatedAt);
+    },
+  );
+
+  //2
+  test(
+    " 'should return wallets as WalletModel stream',",
+    () async {
+      final wallet = WalletsTableData(
+        id: 1,
+        name: 'Cash',
+        balance: 500,
+        type: 'cash',
+        iconName: 'wallet',
+        sortOrder: 1,
+        isArchived: false,
+        createdAt: DateTime(2026, 8, 30),
+        updatedAt: DateTime(2026, 8, 30),
+      );
+
+      when(walletDao.watchWallet()).thenAnswer((_) => Stream.value([wallet]));
+      final result = await repository.watchWallet().first;
+
+      expect(result.length, 1);
+      expect(result.first.id, wallet.id);
+      expect(result.first.name, wallet.name);
+      expect(result.first.balance, wallet.balance);
+      expect(result.first.type, wallet.type);
+      expect(result.first.iconName, wallet.iconName);
+      expect(result.first.sortOrder, wallet.sortOrder);
+      expect(result.first.isArchived, wallet.isArchived);
+
+      verify(walletDao.watchWallet()).called(1);
     },
   );
 }

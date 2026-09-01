@@ -40,4 +40,10 @@ class MockWelletsRepository extends _i1.Mock implements _i2.WelletsRepository {
     Invocation.method(#insertWallet, [wallet]),
     returnValue: _i3.Future<int>.value(0),
   ) as _i3.Future<int>);
+
+  @override
+  _i3.Stream<List<_i4.WalletModel>> watchWallet() => (super.noSuchMethod(
+    Invocation.method(#watchWallet, []),
+    returnValue: _i3.Stream<List<_i4.WalletModel>>.empty(),
+  ) as _i3.Stream<List<_i4.WalletModel>>);
 }

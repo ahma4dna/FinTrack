@@ -214,6 +214,12 @@ class MockWalletDao extends _i1.Mock implements _i6.WalletDao {
       ) as _i7.Future<int>);
 
   @override
+  _i7.Stream<List<_i2.WalletsTableData>> watchWallet() => (super.noSuchMethod(
+    Invocation.method(#watchWallet, []),
+    returnValue: _i7.Stream<List<_i2.WalletsTableData>>.empty(),
+  ) as _i7.Stream<List<_i2.WalletsTableData>>);
+
+  @override
   _i7.Stream<T> createStream<T extends Object>(
     _i5.QueryStreamFetcher<T>? stmt,
   ) => (super.noSuchMethod(

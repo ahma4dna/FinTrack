@@ -15,6 +15,8 @@ import 'package:fintrack/features/accounts/data/repository/wellets_repository_im
     as _i94;
 import 'package:fintrack/features/accounts/domain/repository/wellets_repository.dart'
     as _i820;
+import 'package:fintrack/features/accounts/domain/use_case/insert_wallet_use_case.dart'
+    as _i451;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -30,6 +32,11 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i820.WelletsRepository>(
       () => _i94.WelletsRepositoryImp(walletDao: gh<_i688.WalletDao>()),
+    );
+    gh.lazySingleton<_i451.InsertWalletUseCase>(
+      () => _i451.InsertWalletUseCase(
+        welletsRepository: gh<_i820.WelletsRepository>(),
+      ),
     );
     return this;
   }

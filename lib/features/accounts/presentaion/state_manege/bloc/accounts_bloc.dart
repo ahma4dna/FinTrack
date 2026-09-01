@@ -25,7 +25,7 @@ class AccountsBloc extends Bloc<AccountsEvent, AccountsState> {
 
   void _watchWallets(WatchWalletsEvent event, Emitter<AccountsState> emit) async {
     await _streamSubscription?.cancel();
-    watchWalletsUseCase.watchWallet().listen(
+    _streamSubscription = watchWalletsUseCase.watchWallet().listen(
       (walletsModel) {
         add(UpdateWalletsEvent(walletsModel: walletsModel));
       },

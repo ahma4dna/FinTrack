@@ -5,6 +5,16 @@
   "home": "الرئيسية"  ,
   "account": "الحسابات"  ,
   "budget": "الميزانيات"  ,
-  "report": "التقارير"   
-  
+  "report": "التقارير"   ,
+  "add_new_account": "إضافة حساب جديد"  ,
+  "add_account": "إضافة حساب"  ,
+  "account_name": "اسم الحساب"  ,
+  "ex_wallet_day": "مثال: محفظة اليومية"  ,
+  "type_account": "نوع الحساب"  ,
+  "cash": "نقدي"  ,
+  "bank": "بنكي"  ,
+  "cridit": "ائتمان"  ,
+  "balance_first":"الرصيد الافتتاحي", 
+  "save_account": "حفظ الحساب"
+   
   }

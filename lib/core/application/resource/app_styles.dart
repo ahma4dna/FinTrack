@@ -4,6 +4,16 @@ import 'package:flutter/material.dart';
 import 'app_size.dart';
 
 abstract class AppStyles {
+  static TextStyle getRgularMono14({
+    required BuildContext context,
+    double? fontSize,
+    Color? color,
+  }) => TextStyle(
+    color: color ?? const Color(0xFF64707A),
+    fontSize: fontSize ?? AppSize.s14,
+    fontFamily: 'IBM Plex Mono',
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle getSemiBoldMono36({
     required BuildContext context,
     double? fontSize,
@@ -36,7 +46,7 @@ abstract class AppStyles {
     fontFamily: 'IBM Plex Sans Arabic',
     fontWeight: FontWeight.w600,
   );
-static TextStyle getBoldSens36({
+  static TextStyle getBoldSens36({
     required BuildContext context,
     double? fontSize,
     Color? color,
@@ -62,7 +72,7 @@ static TextStyle getBoldSens36({
     double? fontSize,
     Color? color,
   }) => TextStyle(
-    color:  color ??Colors.white.withValues(alpha: 0.80),
+    color: color ?? Colors.white.withValues(alpha: 0.80),
     fontSize: fontSize ?? 14,
     fontFamily: 'IBM Plex Sans Arabic',
     fontWeight: FontWeight.w500,

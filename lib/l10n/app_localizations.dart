@@ -132,6 +132,66 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'التقارير'**
   String get report;
+
+  /// No description provided for @add_new_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة حساب جديد'**
+  String get add_new_account;
+
+  /// No description provided for @add_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة حساب'**
+  String get add_account;
+
+  /// No description provided for @account_name.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الحساب'**
+  String get account_name;
+
+  /// No description provided for @ex_wallet_day.
+  ///
+  /// In ar, this message translates to:
+  /// **'مثال: محفظة اليومية'**
+  String get ex_wallet_day;
+
+  /// No description provided for @type_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'نوع الحساب'**
+  String get type_account;
+
+  /// No description provided for @cash.
+  ///
+  /// In ar, this message translates to:
+  /// **'نقدي'**
+  String get cash;
+
+  /// No description provided for @bank.
+  ///
+  /// In ar, this message translates to:
+  /// **'بنكي'**
+  String get bank;
+
+  /// No description provided for @cridit.
+  ///
+  /// In ar, this message translates to:
+  /// **'ائتمان'**
+  String get cridit;
+
+  /// No description provided for @balance_first.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرصيد الافتتاحي'**
+  String get balance_first;
+
+  /// No description provided for @save_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ الحساب'**
+  String get save_account;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

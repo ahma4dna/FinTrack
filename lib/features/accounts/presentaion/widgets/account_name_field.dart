@@ -6,9 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AccountNameField extends StatelessWidget {
-  const new({
+  final TextEditingController name;
+  const AccountNameField({
     super.key,
     required this.appContext,
+    required this.name,
   });
 
   final AppContext appContext;
@@ -16,8 +18,15 @@ class AccountNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: name,
       minLines: 1,
       maxLines: 1,
+      validator: (value) {
+        if (value == null || value.trim().isEmpty) {
+          return appContext.localText.this_fiald_requaird;
+        }
+        return null;
+      },
       keyboardType: TextInputType.name,
       inputFormatters: [
         LengthLimitingTextInputFormatter(15),

@@ -7,12 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class SaveAccountButtonWidget extends StatelessWidget {
-  const new({
+  const SaveAccountButtonWidget({
     super.key,
     required this.appContext,
+    required this.onPressed,
   });
 
   final AppContext appContext;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class SaveAccountButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSize.s16),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         appContext.localText.save_account,
         style: AppStyles.getSemiBoldSens16(
@@ -39,13 +41,22 @@ class SaveAccountButtonWidget extends StatelessWidget {
 }
 
 class FirstBalanceFieldWidget extends StatelessWidget {
-  const new({
+  final TextEditingController balance;
+  const FirstBalanceFieldWidget({
     super.key,
+    required this.balance,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: balance,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return AppContext.of(context).localText.this_fiald_requaird;
+        }
+        return null;
+      },
       minLines: 1,
       maxLines: 1,
       keyboardType: TextInputType.number,

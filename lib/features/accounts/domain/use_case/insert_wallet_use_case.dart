@@ -9,6 +9,6 @@ class InsertWalletUseCase {
   InsertWalletUseCase({required this.welletsRepository});
 
   Future<int> insertWallet(WalletModel wallet) async {
-    return welletsRepository.insertWallet(wallet);
+    return await welletsRepository.insertWallet(wallet);
   }
 }

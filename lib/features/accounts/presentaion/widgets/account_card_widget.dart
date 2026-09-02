@@ -3,13 +3,16 @@ import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_padding.dart';
 import 'package:fintrack/core/application/resource/app_size.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';
+import 'package:fintrack/features/accounts/domain/models/wallet_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
 class AccountCardWidget extends StatelessWidget {
-  const new({
+  final WalletModel walletModel;
+  const AccountCardWidget({
     super.key,
+    required this.walletModel,
   });
 
   @override
@@ -44,7 +47,7 @@ class AccountCardWidget extends StatelessWidget {
             ),
             child: Center(
               child: SvgPicture.asset(
-                AppAssets.bank,
+                "assets/icon/${walletModel.iconName}.svg",
                 height: AppSize.s25,
                 width: AppSize.s25,
               ),
@@ -58,7 +61,7 @@ class AccountCardWidget extends StatelessWidget {
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    'البنك الأهلي',
+                    walletModel.name,
                     textAlign: TextAlign.right,
                     maxLines: 1,
                     style: AppStyles.getMeduimSens14(
@@ -72,7 +75,7 @@ class AccountCardWidget extends StatelessWidget {
                 FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    'حساب بنكي',
+                    walletModel.type,
                     textAlign: TextAlign.right,
                     style: AppStyles.getRegularSens14(
                       context: context,
@@ -89,7 +92,7 @@ class AccountCardWidget extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                '\$8,6000',
+                '\$${walletModel.balance}',
                 textAlign: TextAlign.right,
                 style: AppStyles.getSemiBoldMono14(
                   context: context,

@@ -9,6 +9,8 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+
+import 'package:drift/drift.dart' as _i500;
 import 'package:fintrack/core/database/app_database.dart' as _i449;
 import 'package:fintrack/features/accounts/data/dao/wallet_dao.dart' as _i688;
 import 'package:fintrack/features/accounts/data/repository/wellets_repository_imp.dart'
@@ -26,13 +28,21 @@ import 'package:injectable/injectable.dart' as _i526;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
-  _i174.GetIt init({
+  Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
-  }) {
+  }) async {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final databaseModule = _$DatabaseModule();
+    await gh.factoryAsync<_i500.QueryExecutor>(
+      () => databaseModule.databaseConnection,
+      preResolve: true,
+    );
+    gh.lazySingleton<_i449.AppDatabase>(
+      () => _i449.AppDatabase(gh<_i500.QueryExecutor>()),
+    );
     gh.lazySingleton<_i688.WalletDao>(
-      () => _i688.WalletDao(gh<_i449.AppDatabase>()),
+      () => databaseModule.walletDao(gh<_i449.AppDatabase>()),
     );
     gh.lazySingleton<_i820.WelletsRepository>(
       () => _i94.WelletsRepositoryImp(walletDao: gh<_i688.WalletDao>()),
@@ -56,3 +66,5 @@ extension GetItInjectableX on _i174.GetIt {
     return this;
   }
 }
+
+class _$DatabaseModule extends _i449.DatabaseModule {}

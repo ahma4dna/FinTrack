@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 class WatchWalletsUseCase {
   final WelletsRepository welletsRepository;
   WatchWalletsUseCase({required this.welletsRepository});
-  Stream<List<WalletModel>> watchWallet() {
-    return welletsRepository.watchWallet();
+  Stream<List<WalletModel>> watchWallet() async* {
+    yield* welletsRepository.watchWallet();
   }
 }

@@ -59,4 +59,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get save_account => 'حفظ الحساب';
+
+  @override
+  String get not_add_account => 'لم يتم إضافة حساب ';
+
+  @override
+  String get this_fiald_requaird => 'هذا الحقل مطلوب';
 }

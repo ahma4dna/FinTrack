@@ -13,7 +13,7 @@ class WelletsRepositoryImp implements WelletsRepository {
   WelletsRepositoryImp({required this.walletDao});
   @override
   Future<int> insertWallet(WalletModel wallet) async {
-    return walletDao.insertWallet(
+    return await walletDao.insertWallet(
       WalletsTableCompanion.insert(
         name: wallet.name,
         balance: Value(wallet.balance),
@@ -28,8 +28,8 @@ class WelletsRepositoryImp implements WelletsRepository {
   }
 
   @override
-  Stream<List<WalletModel>> watchWallet() {
-    return walletDao.watchWallet().map(
+  Stream<List<WalletModel>> watchWallet() async* {
+    yield* walletDao.watchWallet().map(
       (items) => items.map((item) => item.toModel()).toList(),
     );
   }

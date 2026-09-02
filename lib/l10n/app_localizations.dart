@@ -192,6 +192,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'حفظ الحساب'**
   String get save_account;
+
+  /// No description provided for @not_add_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يتم إضافة حساب '**
+  String get not_add_account;
+
+  /// No description provided for @this_fiald_requaird.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الحقل مطلوب'**
+  String get this_fiald_requaird;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

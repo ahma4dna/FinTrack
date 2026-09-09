@@ -11,7 +11,22 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
 import 'package:drift/drift.dart' as _i500;
+import 'package:fintrack/core/data/dao/transactions_daos.dart' as _i721;
+import 'package:fintrack/core/data/repository/transactions_repository_imp.dart'
+    as _i980;
 import 'package:fintrack/core/database/app_database.dart' as _i449;
+import 'package:fintrack/core/domain/repository/transactions_repository.dart'
+    as _i825;
+import 'package:fintrack/core/domain/use_case/delete_transaction_use_case.dart'
+    as _i1012;
+import 'package:fintrack/core/domain/use_case/get_category_use_case.dart'
+    as _i175;
+import 'package:fintrack/core/domain/use_case/insert_transaction_use_case.dart'
+    as _i278;
+import 'package:fintrack/core/domain/use_case/watch_by_wallet_use_case.dart'
+    as _i235;
+import 'package:fintrack/core/presentaion/state_mangement/bloc/transacation_bloc.dart'
+    as _i976;
 import 'package:fintrack/features/accounts/data/dao/wallet_dao.dart' as _i688;
 import 'package:fintrack/features/accounts/data/repository/wellets_repository_imp.dart'
     as _i94;
@@ -43,6 +58,34 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i688.WalletDao>(
       () => databaseModule.walletDao(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i721.TransactionsDaos>(
+      () => databaseModule.transactionsDaos(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i825.TransactionsRepository>(
+      () => _i980.TransactionsRepositoryImp(
+        transactionsDaos: gh<_i721.TransactionsDaos>(),
+      ),
+    );
+    gh.lazySingleton<_i1012.DeleteTransactionUseCase>(
+      () => _i1012.DeleteTransactionUseCase(gh<_i825.TransactionsRepository>()),
+    );
+    gh.lazySingleton<_i175.GetCategoryUseCase>(
+      () => _i175.GetCategoryUseCase(gh<_i825.TransactionsRepository>()),
+    );
+    gh.lazySingleton<_i278.InsertTransactionUseCase>(
+      () => _i278.InsertTransactionUseCase(gh<_i825.TransactionsRepository>()),
+    );
+    gh.lazySingleton<_i235.WatchByWalletUseCase>(
+      () => _i235.WatchByWalletUseCase(gh<_i825.TransactionsRepository>()),
+    );
+    gh.factory<_i976.TransacationBloc>(
+      () => _i976.TransacationBloc(
+        insertTransactionUseCase: gh<_i278.InsertTransactionUseCase>(),
+        deleteTransactionUseCase: gh<_i1012.DeleteTransactionUseCase>(),
+        watchByWalletUseCase: gh<_i235.WatchByWalletUseCase>(),
+        getCategoryUseCase: gh<_i175.GetCategoryUseCase>(),
+      ),
     );
     gh.lazySingleton<_i820.WelletsRepository>(
       () => _i94.WelletsRepositoryImp(walletDao: gh<_i688.WalletDao>()),

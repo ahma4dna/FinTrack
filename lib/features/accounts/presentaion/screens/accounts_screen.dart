@@ -55,8 +55,14 @@ class AccountsScreen extends StatelessWidget {
                             itemCount: state.wallestModel.length,
                             itemBuilder: (context, index) => Padding(
                               padding: const EdgeInsets.only(bottom: AppPadding.p12),
-                              child: AccountCardWidget(
-                                walletModel: state.wallestModel[index],
+                              child: InkWell(
+                                onTap: () => context.pushNamed(
+                                  "tranaction-Wallet",
+                                  extra: (state.wallestModel[index]),
+                                ),
+                                child: AccountCardWidget(
+                                  walletModel: state.wallestModel[index],
+                                ),
                               ),
                             ),
                           ),

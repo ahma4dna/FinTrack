@@ -65,4 +65,70 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get this_fiald_requaird => 'هذا الحقل مطلوب';
+
+  @override
+  String get new_tranaction => 'معاملة جديدة';
+
+  @override
+  String get income => 'دخل';
+
+  @override
+  String get expense => 'مصروف';
+
+  @override
+  String get price => 'القيمة';
+
+  @override
+  String get data => 'التاريخ';
+
+  @override
+  String get account_from => 'من حساب';
+
+  @override
+  String get addres => 'العنوان';
+
+  @override
+  String get ammount => 'الرصيد';
+
+  @override
+  String get category => 'الفئة';
+
+  @override
+  String get ex_coffe => 'مثال: قهوة ستاربكس';
+
+  @override
+  String get food => 'الطعام';
+
+  @override
+  String get shoping => 'التسوق';
+
+  @override
+  String get transport => 'المواصلات';
+
+  @override
+  String get other => 'اخرى';
+
+  @override
+  String get notes => 'ملاحظات';
+
+  @override
+  String get optinal => 'اختياري';
+
+  @override
+  String get add_note => 'أضف ملاحظة....';
+
+  @override
+  String get save_transaction => 'حفظ المعاملة';
+
+  @override
+  String get save_selction => 'حفظ الاختيار';
+
+  @override
+  String get selection_account => 'اختر حساب';
+
+  @override
+  String get all_tranactions => 'كل المعاملات';
+
+  @override
+  String get no_traactions => 'لا توجد معاملات ';
 }

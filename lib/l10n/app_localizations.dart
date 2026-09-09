@@ -204,6 +204,138 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'هذا الحقل مطلوب'**
   String get this_fiald_requaird;
+
+  /// No description provided for @new_tranaction.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاملة جديدة'**
+  String get new_tranaction;
+
+  /// No description provided for @income.
+  ///
+  /// In ar, this message translates to:
+  /// **'دخل'**
+  String get income;
+
+  /// No description provided for @expense.
+  ///
+  /// In ar, this message translates to:
+  /// **'مصروف'**
+  String get expense;
+
+  /// No description provided for @price.
+  ///
+  /// In ar, this message translates to:
+  /// **'القيمة'**
+  String get price;
+
+  /// No description provided for @data.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ'**
+  String get data;
+
+  /// No description provided for @account_from.
+  ///
+  /// In ar, this message translates to:
+  /// **'من حساب'**
+  String get account_from;
+
+  /// No description provided for @addres.
+  ///
+  /// In ar, this message translates to:
+  /// **'العنوان'**
+  String get addres;
+
+  /// No description provided for @ammount.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرصيد'**
+  String get ammount;
+
+  /// No description provided for @category.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفئة'**
+  String get category;
+
+  /// No description provided for @ex_coffe.
+  ///
+  /// In ar, this message translates to:
+  /// **'مثال: قهوة ستاربكس'**
+  String get ex_coffe;
+
+  /// No description provided for @food.
+  ///
+  /// In ar, this message translates to:
+  /// **'الطعام'**
+  String get food;
+
+  /// No description provided for @shoping.
+  ///
+  /// In ar, this message translates to:
+  /// **'التسوق'**
+  String get shoping;
+
+  /// No description provided for @transport.
+  ///
+  /// In ar, this message translates to:
+  /// **'المواصلات'**
+  String get transport;
+
+  /// No description provided for @other.
+  ///
+  /// In ar, this message translates to:
+  /// **'اخرى'**
+  String get other;
+
+  /// No description provided for @notes.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظات'**
+  String get notes;
+
+  /// No description provided for @optinal.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختياري'**
+  String get optinal;
+
+  /// No description provided for @add_note.
+  ///
+  /// In ar, this message translates to:
+  /// **'أضف ملاحظة....'**
+  String get add_note;
+
+  /// No description provided for @save_transaction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ المعاملة'**
+  String get save_transaction;
+
+  /// No description provided for @save_selction.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ الاختيار'**
+  String get save_selction;
+
+  /// No description provided for @selection_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر حساب'**
+  String get selection_account;
+
+  /// No description provided for @all_tranactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المعاملات'**
+  String get all_tranactions;
+
+  /// No description provided for @no_traactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات '**
+  String get no_traactions;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

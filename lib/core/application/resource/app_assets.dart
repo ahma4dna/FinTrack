@@ -16,4 +16,11 @@ abstract class AppAssets {
   static const String card = "assets/icon/card.svg";
   static const String bank = "assets/icon/bank.svg";
   static const String cash = "assets/icon/cash.svg";
+  static const String close = "assets/icon/close.svg";
+  static const String date = "assets/icon/date.svg";
+  static const String arrowDowen = "assets/icon/arrow_dowen.svg";
+  static const String food = "assets/icon/food.svg";
+  static const String other = "assets/icon/other.svg";
+  static const String shoping = "assets/icon/shopping.svg";
+  static const String tranvel = "assets/icon/transport.svg";
 }

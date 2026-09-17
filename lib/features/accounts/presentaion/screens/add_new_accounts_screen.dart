@@ -1,3 +1,4 @@
+import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_padding.dart';
 import 'package:fintrack/core/application/resource/app_size.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';
@@ -45,16 +46,21 @@ class _AddNewAccountsScreenState extends State<AddNewAccountsScreen> {
       value: getIt<AccountsBloc>(),
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-            onPressed: () {
-              context.pop();
-            },
-            icon: Icon(Icons.arrow_back_ios_new, size: AppSize.s26),
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(1),
+            child: Container(
+              height: 1,
+              color: AppColors.border,
+            ),
           ),
+          backgroundColor: AppColors.white,
+          centerTitle: false,
           title: Text(
             appContext.localText.add_account,
-            style: AppStyles.getSemiBoldSens16(context: context, fontSize: AppSize.s18),
+            style: AppStyles.getSemiBoldSens16(
+              context: context,
+              fontSize: AppSize.s18,
+            ),
           ),
         ),
         body: Padding(

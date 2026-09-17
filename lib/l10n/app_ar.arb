@@ -39,5 +39,18 @@
   "save_selction": "حفظ الاختيار",
   "selection_account": "اختر حساب",
   "all_tranactions": "كل المعاملات" ,
-  "no_traactions": "لا توجد معاملات " 
+  "no_traactions": "لا توجد معاملات " ,
+  "budgets_monthly": "الميزانيات الشهرية" ,
+  "limte": "الحد" ,
+  "add_budget": "إضافة ميزانية"  ,
+  "budget_name": "اسم الميزانية"  ,
+  "limte_budget": "الحد الاقصى للصرف"  ,
+  "selct_category": "اختر التصنيف"  ,
+  "save_budget": "حفظ الميزانية"  ,
+  "previwe": "المعاينة"  ,
+  "budg": "ميزانية"  ,
+  "monthly": "شهري"  ,
+  "not_budgets": "لاتوجد ميزانيات "  
+
+  
   }

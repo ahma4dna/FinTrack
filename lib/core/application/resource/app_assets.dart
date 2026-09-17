@@ -23,4 +23,5 @@ abstract class AppAssets {
   static const String other = "assets/icon/other.svg";
   static const String shoping = "assets/icon/shopping.svg";
   static const String tranvel = "assets/icon/transport.svg";
+  static const String selected = "assets/icon/selected.svg";
 }

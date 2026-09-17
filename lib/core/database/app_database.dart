@@ -7,6 +7,8 @@ import 'package:fintrack/core/database/tables/category_table.dart';
 import 'package:fintrack/core/database/tables/transactions_table.dart';
 import 'package:fintrack/features/accounts/data/dao/wallet_dao.dart';
 import 'package:fintrack/features/accounts/data/tables/wallets_table.dart';
+import 'package:fintrack/features/budgets/data/dao/budgets_dao.dart';
+import 'package:fintrack/features/budgets/data/table/budgets_table.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 part 'app_database.g.dart';
@@ -16,10 +18,12 @@ part 'app_database.g.dart';
     WalletsTable,
     CategoriesTable,
     TransactionsTable,
+    BudgetsTable,
   ],
   daos: [
     WalletDao,
     TransactionsDaos,
+    BudgetsDao,
   ],
 )
 @lazySingleton
@@ -92,5 +96,10 @@ abstract class DatabaseModule {
   @lazySingleton
   TransactionsDaos transactionsDaos(AppDatabase database) {
     return database.transactionsDaos;
+  }
+
+  @lazySingleton
+  BudgetsDao budgetsDao(AppDatabase database) {
+    return database.budgetsDao;
   }
 }

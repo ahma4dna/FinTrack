@@ -1,3 +1,4 @@
+import 'package:fintrack/core/application/resource/app_assets.dart';
 import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_padding.dart';
 import 'package:fintrack/core/application/resource/app_size.dart';
@@ -9,7 +10,9 @@ import 'package:gap/gap.dart';
 class CategoryWidget extends StatelessWidget {
   final String catNmae;
   final String icon;
-  final String selctedCat;
+  final int selctedCat;
+  final int index;
+  final bool isVisbaleSelectedIcon;
 
   final void Function() onTap;
   const CategoryWidget({
@@ -17,8 +20,9 @@ class CategoryWidget extends StatelessWidget {
     required this.catNmae,
     required this.icon,
     required this.selctedCat,
-
     required this.onTap,
+    this.isVisbaleSelectedIcon = true,
+    required this.index,
   });
 
   @override
@@ -32,7 +36,7 @@ class CategoryWidget extends StatelessWidget {
           horizontal: AppPadding.p12,
         ),
         decoration: BoxDecoration(
-          color: selctedCat != catNmae ? AppColors.lightBackground : AppColors.primary,
+          color: selctedCat != index ? AppColors.lightBackground : AppColors.primary,
           borderRadius: BorderRadius.circular(AppSize.s20),
         ),
         child: Row(
@@ -40,11 +44,11 @@ class CategoryWidget extends StatelessWidget {
           children: [
             SvgPicture.asset(
               "assets/icon/$icon.svg",
-              width: AppSize.s24,
-              height: AppSize.s24,
+              width: AppSize.s22,
+              height: AppSize.s22,
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                selctedCat != catNmae ? Color(0xFF121820) : Color(0xFFFFFFFF),
+                selctedCat != index ? Color(0xFF121820) : Color(0xFFFFFFFF),
                 BlendMode.srcIn,
               ),
             ),
@@ -54,9 +58,17 @@ class CategoryWidget extends StatelessWidget {
               style: AppStyles.getMeduimSens12(
                 context: context,
                 fontSize: AppSize.s16,
-                color: selctedCat != catNmae ? const Color(0xFF121820) : const Color(0xFFFFFFFF),
+                color: selctedCat != index ? const Color(0xFF121820) : const Color(0xFFFFFFFF),
               ),
             ),
+            const Gap(AppSize.s8),
+            if (selctedCat == index && isVisbaleSelectedIcon == false)
+              SvgPicture.asset(
+                AppAssets.selected,
+                width: AppSize.s24,
+                height: AppSize.s24,
+                fit: BoxFit.cover,
+              ),
           ],
         ),
       ),

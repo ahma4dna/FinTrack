@@ -131,4 +131,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get no_traactions => 'لا توجد معاملات ';
+
+  @override
+  String get budgets_monthly => 'الميزانيات الشهرية';
+
+  @override
+  String get limte => 'الحد';
+
+  @override
+  String get add_budget => 'إضافة ميزانية';
+
+  @override
+  String get budget_name => 'اسم الميزانية';
+
+  @override
+  String get limte_budget => 'الحد الاقصى للصرف';
+
+  @override
+  String get selct_category => 'اختر التصنيف';
+
+  @override
+  String get save_budget => 'حفظ الميزانية';
+
+  @override
+  String get previwe => 'المعاينة';
+
+  @override
+  String get budg => 'ميزانية';
+
+  @override
+  String get monthly => 'شهري';
+
+  @override
+  String get not_budgets => 'لاتوجد ميزانيات ';
 }

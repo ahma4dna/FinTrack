@@ -37,7 +37,7 @@ class _AddTransactionSheetScreenState extends State<AddTransactionSheetScreen> {
   late TextEditingController title;
   late TextEditingController note;
   String selctionTypeTranaction = "expense";
-  String selctCate = "الطعام";
+  int selctCate = 0;
   String selctCateValue = "food";
   WalletModel? walletModel;
   DateTime? selctDate;
@@ -94,6 +94,7 @@ class _AddTransactionSheetScreenState extends State<AddTransactionSheetScreen> {
               color: AppColors.primary,
             );
           }
+          categoriesTableData ??= state.categoriesTableData.first;
           return Container(
             height: MediaQuery.sizeOf(context).height * AppSize.s0_8,
             decoration: BoxDecoration(
@@ -180,10 +181,11 @@ class _AddTransactionSheetScreenState extends State<AddTransactionSheetScreen> {
                                 icon: state.categoriesTableData[index].iconName,
                                 selctedCat: selctCate,
                                 onTap: () {
-                                  selctCate = state.categoriesTableData[index].name;
+                                  selctCate = index;
                                   categoriesTableData = state.categoriesTableData[index];
                                   setState(() {});
                                 },
+                                index: index,
                               ),
                             ),
                           ),
@@ -204,12 +206,14 @@ class _AddTransactionSheetScreenState extends State<AddTransactionSheetScreen> {
                               title: title.text,
                               date: selctDate ?? DateTime.now(),
                             );
-                            getIt<TransacationBloc>().add(
-                              AddTranactionEvnt(
-                                txn: txn,
-                              ),
-                            );
-                            context.pop();
+                            if (walletModel != null && categoriesTableData != null) {
+                              getIt<TransacationBloc>().add(
+                                AddTranactionEvnt(
+                                  txn: txn,
+                                ),
+                              );
+                              context.pop();
+                            }
                           },
                         ),
                       ],

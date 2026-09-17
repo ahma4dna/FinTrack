@@ -38,6 +38,19 @@ import 'package:fintrack/features/accounts/domain/use_case/watch_wallets_use_cas
     as _i359;
 import 'package:fintrack/features/accounts/presentaion/state_manege/bloc/accounts_bloc.dart'
     as _i554;
+import 'package:fintrack/features/budgets/data/dao/budgets_dao.dart' as _i452;
+import 'package:fintrack/features/budgets/data/repository/budgets_repository_imp.dart'
+    as _i83;
+import 'package:fintrack/features/budgets/domain/repository/budgets_repository.dart'
+    as _i221;
+import 'package:fintrack/features/budgets/domain/use_case/get_available_categories_use_case.dart'
+    as _i898;
+import 'package:fintrack/features/budgets/domain/use_case/insert_budget_use_case.dart'
+    as _i252;
+import 'package:fintrack/features/budgets/domain/use_case/watch_all_budget_use_case.dart'
+    as _i566;
+import 'package:fintrack/features/budgets/presentaion/state_manege/bloc/budgets_bloc.dart'
+    as _i1029;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -61,6 +74,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i721.TransactionsDaos>(
       () => databaseModule.transactionsDaos(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i452.BudgetsDao>(
+      () => databaseModule.budgetsDao(gh<_i449.AppDatabase>()),
     );
     gh.lazySingleton<_i825.TransactionsRepository>(
       () => _i980.TransactionsRepositoryImp(
@@ -89,6 +105,26 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i820.WelletsRepository>(
       () => _i94.WelletsRepositoryImp(walletDao: gh<_i688.WalletDao>()),
+    );
+    gh.lazySingleton<_i221.BudgetsRepository>(
+      () => _i83.BudgetsRepositoryImp(budgetsDao: gh<_i452.BudgetsDao>()),
+    );
+    gh.lazySingleton<_i898.GetAvailableCategoriesUseCase>(
+      () => _i898.GetAvailableCategoriesUseCase(gh<_i221.BudgetsRepository>()),
+    );
+    gh.lazySingleton<_i252.InsertBudgetUseCase>(
+      () => _i252.InsertBudgetUseCase(gh<_i221.BudgetsRepository>()),
+    );
+    gh.lazySingleton<_i566.WatchAllBudgetUseCase>(
+      () => _i566.WatchAllBudgetUseCase(gh<_i221.BudgetsRepository>()),
+    );
+    gh.lazySingleton<_i1029.BudgetsBloc>(
+      () => _i1029.BudgetsBloc(
+        insertBudgetUseCase: gh<_i252.InsertBudgetUseCase>(),
+        watchAllBudgetUseCase: gh<_i566.WatchAllBudgetUseCase>(),
+        getAvailableCategoriesUseCase:
+            gh<_i898.GetAvailableCategoriesUseCase>(),
+      ),
     );
     gh.lazySingleton<_i451.InsertWalletUseCase>(
       () => _i451.InsertWalletUseCase(

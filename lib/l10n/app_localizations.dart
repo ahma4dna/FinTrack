@@ -336,6 +336,72 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد معاملات '**
   String get no_traactions;
+
+  /// No description provided for @budgets_monthly.
+  ///
+  /// In ar, this message translates to:
+  /// **'الميزانيات الشهرية'**
+  String get budgets_monthly;
+
+  /// No description provided for @limte.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحد'**
+  String get limte;
+
+  /// No description provided for @add_budget.
+  ///
+  /// In ar, this message translates to:
+  /// **'إضافة ميزانية'**
+  String get add_budget;
+
+  /// No description provided for @budget_name.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الميزانية'**
+  String get budget_name;
+
+  /// No description provided for @limte_budget.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحد الاقصى للصرف'**
+  String get limte_budget;
+
+  /// No description provided for @selct_category.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر التصنيف'**
+  String get selct_category;
+
+  /// No description provided for @save_budget.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ الميزانية'**
+  String get save_budget;
+
+  /// No description provided for @previwe.
+  ///
+  /// In ar, this message translates to:
+  /// **'المعاينة'**
+  String get previwe;
+
+  /// No description provided for @budg.
+  ///
+  /// In ar, this message translates to:
+  /// **'ميزانية'**
+  String get budg;
+
+  /// No description provided for @monthly.
+  ///
+  /// In ar, this message translates to:
+  /// **'شهري'**
+  String get monthly;
+
+  /// No description provided for @not_budgets.
+  ///
+  /// In ar, this message translates to:
+  /// **'لاتوجد ميزانيات '**
+  String get not_budgets;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

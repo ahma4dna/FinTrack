@@ -16,7 +16,6 @@ void main() {
 
   setUp(() {
     walletDao = MockWalletDao();
-
     repository = WelletsRepositoryImp(
       walletDao: walletDao,
     );

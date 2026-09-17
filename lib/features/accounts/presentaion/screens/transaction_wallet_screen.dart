@@ -29,15 +29,15 @@ class TransactionWalletScreen extends StatelessWidget {
       create: (context) => getIt<TransacationBloc>()..add(WatchByWalletTranactionEvnt(walletId: walletModel.id ?? 0)),
       child: Scaffold(
         appBar: AppBar(
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(1),
+            child: Container(
+              height: 1,
+              color: AppColors.border,
+            ),
+          ),
           backgroundColor: AppColors.white,
           centerTitle: false,
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-            onPressed: () {
-              context.pop();
-            },
-            icon: Icon(Icons.arrow_back_ios_new, size: AppSize.s26),
-          ),
           title: Text(
             appContext.localText.all_tranactions,
             style: AppStyles.getSemiBoldSens16(context: context, fontSize: AppSize.s18),

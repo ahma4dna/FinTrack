@@ -414,6 +414,36 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'إتجاه الانفاق الاسبوعي'**
   String get incove_wekaly;
+
+  /// No description provided for @good_morning.
+  ///
+  /// In ar, this message translates to:
+  /// **'صباح الخير'**
+  String get good_morning;
+
+  /// No description provided for @good_evening.
+  ///
+  /// In ar, this message translates to:
+  /// **'مساء الخير'**
+  String get good_evening;
+
+  /// No description provided for @total_balance.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرصيد الإجمالي'**
+  String get total_balance;
+
+  /// No description provided for @recent_transactions.
+  ///
+  /// In ar, this message translates to:
+  /// **'آخر المعاملات'**
+  String get recent_transactions;
+
+  /// No description provided for @no_transactions_yet.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد معاملات بعد'**
+  String get no_transactions_yet;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

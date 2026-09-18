@@ -170,4 +170,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get incove_wekaly => 'إتجاه الانفاق الاسبوعي';
+
+  @override
+  String get good_morning => 'صباح الخير';
+
+  @override
+  String get good_evening => 'مساء الخير';
+
+  @override
+  String get total_balance => 'الرصيد الإجمالي';
+
+  @override
+  String get recent_transactions => 'آخر المعاملات';
+
+  @override
+  String get no_transactions_yet => 'لا توجد معاملات بعد';
 }

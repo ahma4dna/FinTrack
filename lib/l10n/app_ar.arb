@@ -52,7 +52,11 @@
   "monthly": "شهري"  ,
   "not_budgets": "لاتوجد ميزانيات "  ,
   "incove_by_category": "المصروفات حسب الفئة"  ,
-  "incove_wekaly": "إتجاه الانفاق الاسبوعي"  
+  "incove_wekaly": "إتجاه الانفاق الاسبوعي"  ,
+  "good_morning": "صباح الخير",
+  "good_evening": "مساء الخير",
+  "total_balance": "الرصيد الإجمالي", 
+  "recent_transactions": "آخر المعاملات",
+  "no_transactions_yet": "لا توجد معاملات بعد"
 
-  
   }

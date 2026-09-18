@@ -9,6 +9,7 @@ import 'package:fintrack/features/accounts/data/dao/wallet_dao.dart';
 import 'package:fintrack/features/accounts/data/tables/wallets_table.dart';
 import 'package:fintrack/features/budgets/data/dao/budgets_dao.dart';
 import 'package:fintrack/features/budgets/data/table/budgets_table.dart';
+import 'package:fintrack/features/home/data/daos/home_dao.dart';
 import 'package:fintrack/features/reports/data/daos/report_daos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
@@ -26,6 +27,7 @@ part 'app_database.g.dart';
     TransactionsDaos,
     BudgetsDao,
     ReportDaos,
+    HomeDao,
   ],
 )
 @lazySingleton
@@ -108,5 +110,10 @@ abstract class DatabaseModule {
   @lazySingleton
   ReportDaos reportDaos(AppDatabase database) {
     return database.reportDaos;
+  }
+
+  @lazySingleton
+  HomeDao hmeDao(AppDatabase database) {
+    return database.homeDao;
   }
 }

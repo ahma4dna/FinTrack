@@ -1,3 +1,5 @@
-String formatNumber(double value) {
-  return value % 1 == 0 ? value.toInt().toString() : value.toString();
+import 'package:intl/intl.dart';
+
+String formatNumber(num value) {
+  return NumberFormat('#,###').format(value);
 }

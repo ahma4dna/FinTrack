@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 final budgetsRoute = GoRoute(
   path: budgetsPath,
+  name: "budgets",
   pageBuilder: (context, state) => CupertinoPage(
     child: BudgetsScreen(),
   ),

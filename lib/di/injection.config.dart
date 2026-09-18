@@ -51,6 +51,17 @@ import 'package:fintrack/features/budgets/domain/use_case/watch_all_budget_use_c
     as _i566;
 import 'package:fintrack/features/budgets/presentaion/state_manege/bloc/budgets_bloc.dart'
     as _i1029;
+import 'package:fintrack/features/home/data/daos/home_dao.dart' as _i214;
+import 'package:fintrack/features/home/data/repository/home_repository_impl.dart'
+    as _i1019;
+import 'package:fintrack/features/home/domain/repository/home_repository.dart'
+    as _i121;
+import 'package:fintrack/features/home/domain/use_case/watch_home_transactions_use_case.dart'
+    as _i753;
+import 'package:fintrack/features/home/domain/use_case/watch_home_wallets_use_case.dart'
+    as _i95;
+import 'package:fintrack/features/home/presentaion/state_manege/bloc/home_bloc.dart'
+    as _i718;
 import 'package:fintrack/features/reports/data/daos/report_daos.dart' as _i373;
 import 'package:fintrack/features/reports/data/repository/report_repository_impl.dart'
     as _i24;
@@ -92,6 +103,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i373.ReportDaos>(
       () => databaseModule.reportDaos(gh<_i449.AppDatabase>()),
     );
+    gh.lazySingleton<_i214.HomeDao>(
+      () => databaseModule.hmeDao(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i121.HomeRepository>(
+      () => _i1019.HomeRepositoryImpl(homeDao: gh<_i214.HomeDao>()),
+    );
     gh.lazySingleton<_i2.ReportRepository>(
       () => _i24.ReportRepositoryImpl(gh<_i373.ReportDaos>()),
     );
@@ -111,6 +128,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i235.WatchByWalletUseCase>(
       () => _i235.WatchByWalletUseCase(gh<_i825.TransactionsRepository>()),
+    );
+    gh.lazySingleton<_i95.WatchHomeWalletsUseCase>(
+      () => _i95.WatchHomeWalletsUseCase(gh<_i121.HomeRepository>()),
+    );
+    gh.factory<_i753.WatchHomeTransactionsUseCase>(
+      () => _i753.WatchHomeTransactionsUseCase(gh<_i121.HomeRepository>()),
     );
     gh.factory<_i976.TransacationBloc>(
       () => _i976.TransacationBloc(
@@ -140,6 +163,13 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i567.GetWeeklyTrendUseCase>(
       () => _i567.GetWeeklyTrendUseCase(gh<_i2.ReportRepository>()),
+    );
+    gh.lazySingleton<_i718.HomeBloc>(
+      () => _i718.HomeBloc(
+        watchHomeWalletsUseCase: gh<_i95.WatchHomeWalletsUseCase>(),
+        watchAllBudgetUseCase: gh<_i566.WatchAllBudgetUseCase>(),
+        watchHomeTransactionsUseCase: gh<_i753.WatchHomeTransactionsUseCase>(),
+      ),
     );
     gh.lazySingleton<_i1029.BudgetsBloc>(
       () => _i1029.BudgetsBloc(

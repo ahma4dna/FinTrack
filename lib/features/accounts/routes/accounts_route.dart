@@ -1,4 +1,3 @@
-import 'package:fintrack/core/domain/models/transaction_with_details.dart';
 import 'package:fintrack/features/accounts/domain/models/wallet_model.dart';
 import 'package:fintrack/features/accounts/presentaion/screens/accounts_screen.dart';
 import 'package:fintrack/features/accounts/presentaion/screens/add_new_accounts_screen.dart';

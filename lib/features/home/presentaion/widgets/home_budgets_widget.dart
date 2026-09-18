@@ -24,11 +24,6 @@ class HomeBudgetsWidget extends StatelessWidget {
           final b = budgets[index];
           final limit = b.budget.limitAmount;
           final pct = limit > 0 ? ((b.spent / limit) * 100).clamp(0, 100) : 0.0;
-          final barColor = pct >= 100
-              ? AppColors.red
-              : pct >= 75
-              ? AppColors.amber
-              : AppColors.primary;
 
           return Container(
             width: 140,

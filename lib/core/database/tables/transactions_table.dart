@@ -3,6 +3,7 @@ import 'package:fintrack/core/database/tables/category_table.dart';
 import 'package:fintrack/features/accounts/data/tables/wallets_table.dart';
 
 class TransactionsTable extends Table {
+  @override
   String get tableName => 'transactions';
 
   IntColumn get id => integer().autoIncrement()();

@@ -1,5 +1,4 @@
 import 'package:fintrack/core/application/resource/app_size.dart';
-import 'package:fintrack/core/application/resource/app_styles.dart';
 import 'package:fintrack/core/utils/app_context.dart';
 import 'package:fintrack/di/injection.dart';
 import 'package:fintrack/features/home/presentaion/widgets/balance_card_widget.dart';

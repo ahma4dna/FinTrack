@@ -12,7 +12,6 @@ import 'package:fintrack/features/accounts/presentaion/widgets/tranaction_widget
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 
 class TransactionWalletScreen extends StatelessWidget {
   final WalletModel walletModel;
@@ -45,9 +44,7 @@ class TransactionWalletScreen extends StatelessWidget {
         ),
         body: BlocBuilder<TransacationBloc, TransacationState>(
           builder: (context, state) {
-            if (state.categoriesTableData.isNotEmpty) {
-              print(state.categoriesTableData.first.iconName);
-            }
+            if (state.categoriesTableData.isNotEmpty) {}
             return Column(
               children: [
                 const Gap(AppSize.s20),

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:fintrack/core/application/resource/app_assets.dart';
 import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';

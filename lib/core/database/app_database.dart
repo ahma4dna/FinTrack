@@ -9,6 +9,7 @@ import 'package:fintrack/features/accounts/data/dao/wallet_dao.dart';
 import 'package:fintrack/features/accounts/data/tables/wallets_table.dart';
 import 'package:fintrack/features/budgets/data/dao/budgets_dao.dart';
 import 'package:fintrack/features/budgets/data/table/budgets_table.dart';
+import 'package:fintrack/features/reports/data/daos/report_daos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 part 'app_database.g.dart';
@@ -24,6 +25,7 @@ part 'app_database.g.dart';
     WalletDao,
     TransactionsDaos,
     BudgetsDao,
+    ReportDaos,
   ],
 )
 @lazySingleton
@@ -50,25 +52,25 @@ class AppDatabase extends _$AppDatabase {
             name: 'الطعام',
             type: 'expense',
             iconName: 'food',
-            categoryColor: '0XFFC98A2C',
+            categoryColor: '0xFFC98A2C',
           ),
           CategoriesTableCompanion.insert(
             name: 'التسوق',
             type: 'expense',
             iconName: 'shopping',
-            categoryColor: '0XFF0D5C56',
+            categoryColor: '0xFF0D5C56',
           ),
           CategoriesTableCompanion.insert(
             name: 'المواصلات',
             type: 'expense',
             iconName: 'transport',
-            categoryColor: '0XFF0D5C56',
+            categoryColor: '0xFF4C9A6A',
           ),
           CategoriesTableCompanion.insert(
             name: 'أخرى',
             type: 'expense',
             iconName: 'other',
-            categoryColor: '0XFF121820',
+            categoryColor: '0xFF121820',
           ),
         ],
       );
@@ -101,5 +103,10 @@ abstract class DatabaseModule {
   @lazySingleton
   BudgetsDao budgetsDao(AppDatabase database) {
     return database.budgetsDao;
+  }
+
+  @lazySingleton
+  ReportDaos reportDaos(AppDatabase database) {
+    return database.reportDaos;
   }
 }

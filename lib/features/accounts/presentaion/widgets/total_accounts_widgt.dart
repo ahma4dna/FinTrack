@@ -1,6 +1,7 @@
 import 'package:fintrack/core/application/resource/app_size.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';
 import 'package:fintrack/core/utils/app_context.dart';
+import 'package:fintrack/core/utils/constant.dart';
 import 'package:fintrack/features/accounts/domain/models/wallet_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -47,7 +48,7 @@ class TotalAccountsWidgt extends StatelessWidget {
             ),
 
             Text(
-              walletsModel.fold<double>(0, (sum, item) => sum + item.balance).toString(),
+              formatNumber(walletsModel.fold<double>(0, (sum, item) => sum + item.balance)),
               style: AppStyles.getRgularMono14(
                 context: context,
                 fontSize: AppSize.s18,

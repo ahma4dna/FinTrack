@@ -10,9 +10,4 @@ Future<void> main() async {
   await configureDependencies(Environment.dev);
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
-  // runApp(
-  //   DevicePreview(
-  //     builder: (context) => const MyApp(),
-  //   ),
-  // );
 }

@@ -402,6 +402,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لاتوجد ميزانيات '**
   String get not_budgets;
+
+  /// No description provided for @incove_by_category.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصروفات حسب الفئة'**
+  String get incove_by_category;
+
+  /// No description provided for @incove_wekaly.
+  ///
+  /// In ar, this message translates to:
+  /// **'إتجاه الانفاق الاسبوعي'**
+  String get incove_wekaly;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

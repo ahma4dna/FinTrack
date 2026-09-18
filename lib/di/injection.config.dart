@@ -51,6 +51,17 @@ import 'package:fintrack/features/budgets/domain/use_case/watch_all_budget_use_c
     as _i566;
 import 'package:fintrack/features/budgets/presentaion/state_manege/bloc/budgets_bloc.dart'
     as _i1029;
+import 'package:fintrack/features/reports/data/daos/report_daos.dart' as _i373;
+import 'package:fintrack/features/reports/data/repository/report_repository_impl.dart'
+    as _i24;
+import 'package:fintrack/features/reports/domain/repository/report_repository.dart'
+    as _i2;
+import 'package:fintrack/features/reports/domain/use_case/get_category_spending_use_case.dart'
+    as _i533;
+import 'package:fintrack/features/reports/domain/use_case/get_weekly_trend_use_case.dart'
+    as _i567;
+import 'package:fintrack/features/reports/presentaion/state_manege/bloc/report_bloc.dart'
+    as _i794;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -77,6 +88,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i452.BudgetsDao>(
       () => databaseModule.budgetsDao(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i373.ReportDaos>(
+      () => databaseModule.reportDaos(gh<_i449.AppDatabase>()),
+    );
+    gh.lazySingleton<_i2.ReportRepository>(
+      () => _i24.ReportRepositoryImpl(gh<_i373.ReportDaos>()),
     );
     gh.lazySingleton<_i825.TransactionsRepository>(
       () => _i980.TransactionsRepositoryImp(
@@ -118,6 +135,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i566.WatchAllBudgetUseCase>(
       () => _i566.WatchAllBudgetUseCase(gh<_i221.BudgetsRepository>()),
     );
+    gh.lazySingleton<_i533.GetCategorySpendingUseCase>(
+      () => _i533.GetCategorySpendingUseCase(gh<_i2.ReportRepository>()),
+    );
+    gh.lazySingleton<_i567.GetWeeklyTrendUseCase>(
+      () => _i567.GetWeeklyTrendUseCase(gh<_i2.ReportRepository>()),
+    );
     gh.lazySingleton<_i1029.BudgetsBloc>(
       () => _i1029.BudgetsBloc(
         insertBudgetUseCase: gh<_i252.InsertBudgetUseCase>(),
@@ -140,6 +163,12 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i554.AccountsBloc(
         insertWalletUseCase: gh<_i451.InsertWalletUseCase>(),
         watchWalletsUseCase: gh<_i359.WatchWalletsUseCase>(),
+      ),
+    );
+    gh.lazySingleton<_i794.ReportBloc>(
+      () => _i794.ReportBloc(
+        gh<_i533.GetCategorySpendingUseCase>(),
+        gh<_i567.GetWeeklyTrendUseCase>(),
       ),
     );
     return this;

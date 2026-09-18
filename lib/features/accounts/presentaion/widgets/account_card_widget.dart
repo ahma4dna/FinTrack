@@ -3,6 +3,7 @@ import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_padding.dart';
 import 'package:fintrack/core/application/resource/app_size.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';
+import 'package:fintrack/core/utils/constant.dart';
 import 'package:fintrack/features/accounts/domain/models/wallet_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -92,7 +93,7 @@ class AccountCardWidget extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                '\$${walletModel.balance}',
+                '\$${formatNumber(walletModel.balance)}',
                 textAlign: TextAlign.right,
                 style: AppStyles.getSemiBoldMono14(
                   context: context,

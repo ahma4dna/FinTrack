@@ -164,4 +164,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get not_budgets => 'لاتوجد ميزانيات ';
+
+  @override
+  String get incove_by_category => 'المصروفات حسب الفئة';
+
+  @override
+  String get incove_wekaly => 'إتجاه الانفاق الاسبوعي';
 }

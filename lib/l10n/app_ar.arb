@@ -50,7 +50,9 @@
   "previwe": "المعاينة"  ,
   "budg": "ميزانية"  ,
   "monthly": "شهري"  ,
-  "not_budgets": "لاتوجد ميزانيات "  
+  "not_budgets": "لاتوجد ميزانيات "  ,
+  "incove_by_category": "المصروفات حسب الفئة"  ,
+  "incove_wekaly": "إتجاه الانفاق الاسبوعي"  
 
   
   }

@@ -12,7 +12,7 @@ import 'package:fintrack/features/home/presentaion/screens/home_screen.dart';
 import 'package:fintrack/features/main/presentaion/state_manege/bloc/main_bloc.dart';
 import 'package:fintrack/features/main/presentaion/state_manege/bloc/main_event.dart';
 import 'package:fintrack/features/main/presentaion/state_manege/bloc/main_state.dart';
-import 'package:fintrack/features/reports/routes/reports_screen.dart';
+import 'package:fintrack/features/reports/presentaion/screens/report_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
       HomeScreen(),
       AccountsScreen(),
       BudgetsScreen(),
-      ReportsScreen(),
+      ReportScreen(),
     ];
     super.initState();
   }

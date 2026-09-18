@@ -2,6 +2,7 @@ import 'package:fintrack/core/application/resource/app_colors.dart';
 import 'package:fintrack/core/application/resource/app_size.dart';
 import 'package:fintrack/core/application/resource/app_styles.dart';
 import 'package:fintrack/core/domain/models/transaction_with_details.dart';
+import 'package:fintrack/core/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -87,7 +88,7 @@ class TranactionWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                "\$${transactionWithDetails.transaction.amount.toString()}",
+                "\$${formatNumber(transactionWithDetails.transaction.amount)}",
                 style: AppStyles.getSemiBoldMono14(
                   context: context,
                   fontSize: AppSize.s18,

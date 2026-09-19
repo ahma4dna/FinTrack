@@ -1,18 +1,93 @@
-# fintrack
+<div align="center">
 
-A new Flutter project.
+# FinTrack
 
-## Getting Started
+**الرفيق الذكي لإدارة شؤونك المالية الشخصية**
 
-This project is a starting point for a Flutter application.
+<img src="screenshots/splash_and_icon_clean.png" alt="FinTrack" width="100%">
 
-A few resources to get you started if this is your first Flutter project:
+</div>
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## نظرة عامة
+**FinTrack** هو منظومة متكاملة صُممت لتمنحك تحكماً كاملاً وذكياً في أموالك. من خلال واجهة عصرية وبديهية، يقدم التطبيق تجربة احترافية وسلسة لتتبع النفقات، إدارة الحسابات المتعددة، ومراقبة الميزانيات الشهرية بدقة—كل ذلك بخصوصية تامة ودون الحاجة للاتصال بالإنترنت.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## المميزات الرئيسية
+
+### 📊 لوحة تحكم ذكية
+<div align="center">
+  <img src="screenshots/accounts_overview_clean.png" alt="لوحة التحكم" width="300">
+</div>
+احصل على نظرة شاملة لحالتك المالية في ثوانٍ. تلخص لوحة التحكم إجمالي رصيدك الحالي، وتقدم مؤشرات بصرية لميزانياتك النشطة، بالإضافة إلى أحدث معاملاتك لتظل دائماً على اطلاع.
+
+### 📈 ميزانيات وتقارير دقيقة
+<div align="center">
+  <img src="screenshots/detail_1_clean.png" alt="الميزانيات والتقارير" width="300">
+</div>
+ضع أهدافاً مالية وحدد ميزانيات شهرية مخصصة لفئاتك المختلفة كالتسوق والمواصلات وغيرها. تساعدك أشرطة التقدم المرئية على البقاء ضمن حدودك المالية، بينما تقدم لك الرسوم البيانية التفاعلية رؤى واضحة حول عادات إنفاقك الأسبوعية.
+
+### 💳 تتبع المعاملات
+<div align="center">
+  <img src="screenshots/detail_2_clean.png" alt="سجل المعاملات" width="300">
+</div>
+يمكنك مراجعة جميع معاملاتك المالية بدقة متناهية، سواء كانت نقداً، حسابات بنكية، أو بطاقات ائتمانية. راجع سجل المعاملات المفصل بشكل مستقل ومنظم.
+
+### ⚡ إضافة معاملات سريعة
+<div align="center">
+  <img src="screenshots/form_2_clean.png" alt="تسجيل المعاملات" width="300">
+</div>
+تسجيل مصاريفك، أرباحك، أو تحويلاتك أصبح أسرع من أي وقت مضى. بفضل واجهة إدخال بيانات أنيقة ومركزة، يمكنك تصنيف نفقاتك بسهولة ومتابعة حركة أموالك بدقة.
+
+---
+
+## الأداء والخصوصية أولاً
+
+- **خصوصية تامة (Offline-First)**: بياناتك المالية هي شأن خاص بك وحدك. يقوم FinTrack بحفظ جميع معلوماتك محلياً بشكل آمن على جهازك الشخصي.
+- **أداء استثنائي**: تم بناء التطبيق باستخدام أحدث التقنيات وبنية برمجية نظيفة (Clean Architecture) لضمان استجابة فورية وتجربة مستخدم لا تشوبها شائبة.
+- **تصميم احترافي**: واجهة مستخدم مصممة بعناية فائقة لتقدم تجربة بصرية مريحة، مع دعم كامل للاتجاهات وتناسق مثالي في الخطوط (Typography) ليناسب الاستخدام اليومي المكثف.
+
+---
+
+## الهيكلية البرمجية (Architecture)
+
+يعتمد المشروع على بنية **Clean Architecture** مع تقسيم تنظيمي يعتمد على الميزات (Feature-first)، مما يضمن قابلية التوسع وسهولة الصيانة:
+
+```text
+lib/
+├── core/                          # الأدوات المشتركة (Shared Utilities)
+│   ├── application/               # الثيمات، الألوان، وأنماط النصوص
+│   ├── database/                  # إعدادات قاعدة البيانات والجداول الأساسية
+│   ├── data/                      # مزودات البيانات (DAOs) والمستودعات المشتركة
+│   ├── domain/                    # النماذج (Models) وقواعد العمل المشتركة
+│   └── presentaion/               # مكونات واجهة المستخدم المشتركة
+│
+├── features/                      # الميزات المنفصلة (Features)
+│   ├── home/                      # لوحة التحكم الرئيسية
+│   ├── accounts/                  # إدارة الحسابات
+│   ├── budgets/                   # الميزانيات الشهرية
+│   ├── reports/                   # التقارير والرسوم البيانية
+│   ├── main/                      # الشاشة الحاوية وشريط التنقل السفلي
+│   └── splash/                    # شاشة البداية
+│
+├── l10n/                          # ملفات الترجمة (دعم اللغة العربية)
+├── routes/                        # إعدادات التنقل (GoRouter)
+└── main.dart                      # نقطة بداية التطبيق
+```
+
+---
+
+## 🚀 التشغيل والتثبيت
+
+لتشغيل المشروع على بيئتك المحلية، اتبع الخطوات التالية:
+
+```bash
+# 1. جلب وتثبيت الحزم البرمجية
+flutter pub get
+
+# 2. توليد الأكواد التلقائية (مطلوب لـ Drift و Injectable)
 dart run build_runner build --delete-conflicting-outputs
+
+# 3. تشغيل التطبيق
+flutter run
+```

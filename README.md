@@ -1,93 +1,94 @@
-<div align="center">
-
 # FinTrack
 
-**الرفيق الذكي لإدارة شؤونك المالية الشخصية**
+**The Smart Companion for Personal Finance Management**
 
-<img src="screenshots/splash_and_icon_clean.png" alt="FinTrack" width="100%">
-
-</div>
-
-## نظرة عامة
-**FinTrack** هو منظومة متكاملة صُممت لتمنحك تحكماً كاملاً وذكياً في أموالك. من خلال واجهة عصرية وبديهية، يقدم التطبيق تجربة احترافية وسلسة لتتبع النفقات، إدارة الحسابات المتعددة، ومراقبة الميزانيات الشهرية بدقة—كل ذلك بخصوصية تامة ودون الحاجة للاتصال بالإنترنت.
+## Overview
+**FinTrack** is a comprehensive ecosystem designed to give you complete, intelligent control over your finances. Through a modern and intuitive interface, the application delivers a seamless, professional experience for tracking expenses, managing multiple accounts, and precisely monitoring monthly budgets. Built with a strict focus on data privacy, the app operates entirely offline.
 
 ---
 
-## المميزات الرئيسية
+## Key Features
 
-### 📊 لوحة تحكم ذكية
-<div align="center">
-  <img src="screenshots/accounts_overview_clean.png" alt="لوحة التحكم" width="300">
-</div>
-احصل على نظرة شاملة لحالتك المالية في ثوانٍ. تلخص لوحة التحكم إجمالي رصيدك الحالي، وتقدم مؤشرات بصرية لميزانياتك النشطة، بالإضافة إلى أحدث معاملاتك لتظل دائماً على اطلاع.
+### 📊 Smart Dashboard
+Gain a holistic view of your financial health in seconds. The dashboard intelligently summarizes your current total balance, provides visual progress indicators for your active budgets, and lists your latest transactions so you are always up to date.
 
-### 📈 ميزانيات وتقارير دقيقة
-<div align="center">
-  <img src="screenshots/detail_1_clean.png" alt="الميزانيات والتقارير" width="300">
-</div>
-ضع أهدافاً مالية وحدد ميزانيات شهرية مخصصة لفئاتك المختلفة كالتسوق والمواصلات وغيرها. تساعدك أشرطة التقدم المرئية على البقاء ضمن حدودك المالية، بينما تقدم لك الرسوم البيانية التفاعلية رؤى واضحة حول عادات إنفاقك الأسبوعية.
+### 💳 Comprehensive Account Management
+Whether it is cash, bank accounts, or credit cards, manage them all in one unified place. Track individual balances and review detailed transaction histories for each account independently and systematically.
 
-### 💳 تتبع المعاملات
-<div align="center">
-  <img src="screenshots/detail_2_clean.png" alt="سجل المعاملات" width="300">
-</div>
-يمكنك مراجعة جميع معاملاتك المالية بدقة متناهية، سواء كانت نقداً، حسابات بنكية، أو بطاقات ائتمانية. راجع سجل المعاملات المفصل بشكل مستقل ومنظم.
+### 📈 Accurate Budgets & Reports
+Set financial goals and allocate custom monthly budgets for various categories like shopping, transportation, and utilities. Visual progress bars help you stay within your limits, while interactive charts offer clear insights into your weekly spending habits.
 
-### ⚡ إضافة معاملات سريعة
-<div align="center">
-  <img src="screenshots/form_2_clean.png" alt="تسجيل المعاملات" width="300">
-</div>
-تسجيل مصاريفك، أرباحك، أو تحويلاتك أصبح أسرع من أي وقت مضى. بفضل واجهة إدخال بيانات أنيقة ومركزة، يمكنك تصنيف نفقاتك بسهولة ومتابعة حركة أموالك بدقة.
+### ⚡ Seamless & Fast Transactions
+Logging your expenses, income, or transfers is faster than ever. With an elegant, focused data entry interface, you can effortlessly categorize your spending and track the flow of your money with precision.
 
 ---
 
-## الأداء والخصوصية أولاً
+## Performance & Privacy First
 
-- **خصوصية تامة (Offline-First)**: بياناتك المالية هي شأن خاص بك وحدك. يقوم FinTrack بحفظ جميع معلوماتك محلياً بشكل آمن على جهازك الشخصي.
-- **أداء استثنائي**: تم بناء التطبيق باستخدام أحدث التقنيات وبنية برمجية نظيفة (Clean Architecture) لضمان استجابة فورية وتجربة مستخدم لا تشوبها شائبة.
-- **تصميم احترافي**: واجهة مستخدم مصممة بعناية فائقة لتقدم تجربة بصرية مريحة، مع دعم كامل للاتجاهات وتناسق مثالي في الخطوط (Typography) ليناسب الاستخدام اليومي المكثف.
+- **Total Privacy (Offline-First)**: Your financial data is strictly yours. FinTrack securely stores all your information locally on your personal device.
+- **Exceptional Performance**: Built with cutting-edge technologies and Clean Architecture, ensuring instant responsiveness and a flawless user experience.
+- **Professional Design**: A meticulously crafted user interface designed for visual comfort, featuring full RTL support and perfect typography tailored for heavy daily use.
 
 ---
 
-## الهيكلية البرمجية (Architecture)
+## Tech Stack
 
-يعتمد المشروع على بنية **Clean Architecture** مع تقسيم تنظيمي يعتمد على الميزات (Feature-first)، مما يضمن قابلية التوسع وسهولة الصيانة:
+- **Framework**: Flutter
+- **Database**: Drift (SQLite) with Reactive Streams
+- **State Management**: BLoC + Equatable
+- **Routing**: GoRouter
+- **Dependency Injection**: GetIt + Injectable
+- **Charts**: fl_chart
+
+---
+
+## Architecture
+
+The project relies on **Clean Architecture** combined with a **Feature-first** organizational approach, ensuring high scalability and easy maintenance:
 
 ```text
 lib/
-├── core/                          # الأدوات المشتركة (Shared Utilities)
-│   ├── application/               # الثيمات، الألوان، وأنماط النصوص
-│   ├── database/                  # إعدادات قاعدة البيانات والجداول الأساسية
-│   ├── data/                      # مزودات البيانات (DAOs) والمستودعات المشتركة
-│   ├── domain/                    # النماذج (Models) وقواعد العمل المشتركة
-│   └── presentaion/               # مكونات واجهة المستخدم المشتركة
+├── core/                          # Shared Utilities
+│   ├── application/               # Themes, Colors, and Text Styles
+│   ├── database/                  # Database Configuration and Core Tables
+│   ├── data/                      # Shared DAOs and Repositories
+│   ├── domain/                    # Shared Models and Use Cases
+│   └── presentaion/               # Shared UI Components
 │
-├── features/                      # الميزات المنفصلة (Features)
-│   ├── home/                      # لوحة التحكم الرئيسية
-│   ├── accounts/                  # إدارة الحسابات
-│   ├── budgets/                   # الميزانيات الشهرية
-│   ├── reports/                   # التقارير والرسوم البيانية
-│   ├── main/                      # الشاشة الحاوية وشريط التنقل السفلي
-│   └── splash/                    # شاشة البداية
+├── features/                      # Isolated Features
+│   ├── home/                      # Main Dashboard
+│   ├── accounts/                  # Account Management
+│   ├── budgets/                   # Monthly Budgets
+│   ├── reports/                   # Reports and Charts
+│   ├── main/                      # Shell Screen and Bottom Navigation
+│   └── splash/                    # Splash Screen
 │
-├── l10n/                          # ملفات الترجمة (دعم اللغة العربية)
-├── routes/                        # إعدادات التنقل (GoRouter)
-└── main.dart                      # نقطة بداية التطبيق
+├── l10n/                          # Localization Files
+├── routes/                        # Navigation Configuration (GoRouter)
+└── main.dart                      # Application Entry Point
+```
+
+Every feature within the system adheres to the following internal structure to ensure strict Separation of Concerns:
+```text
+feature/
+├── data/          # Repository Implementations and DAOs
+├── domain/        # Repository Interfaces, Models, and Use Cases
+└── presentaion/   # Screens, Widgets, and State Management (BLoC)
 ```
 
 ---
 
-## 🚀 التشغيل والتثبيت
+## 🚀 Getting Started
 
-لتشغيل المشروع على بيئتك المحلية، اتبع الخطوات التالية:
+To run the project in your local environment, follow these steps:
 
 ```bash
-# 1. جلب وتثبيت الحزم البرمجية
+# 1. Fetch dependencies
 flutter pub get
 
-# 2. توليد الأكواد التلقائية (مطلوب لـ Drift و Injectable)
+# 2. Generate boilerplate code (Required for Drift and Injectable)
 dart run build_runner build --delete-conflicting-outputs
 
-# 3. تشغيل التطبيق
+# 3. Run the application
 flutter run
 ```
